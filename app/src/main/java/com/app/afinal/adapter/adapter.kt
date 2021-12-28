@@ -13,22 +13,26 @@ import com.app.afinal.model.model
 
 class adapter() : RecyclerView.Adapter<adapter.myviewholder>() {
 
-    lateinit var binding: RowLayoutBinding
+    private lateinit var binding: RowLayoutBinding
 
     private var datalist = emptyList<model>()
 
-    class myviewholder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+    class myviewholder(binding: RowLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        val id = binding.id
+        val firstname = binding.firstname
+        val lastname = binding.lastname
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myviewholder {
-        return myviewholder(LayoutInflater.from(parent.context).inflate(R.layout.row_layout,parent,false))
+        binding = RowLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return myviewholder(binding)
     }
 
     override fun onBindViewHolder(holder: myviewholder, position: Int) {
-        holder.itemView.findViewById<TextView>(R.id.id).text = datalist[position].id.toString()
-        holder.itemView.findViewById<TextView>(R.id.firstname).text = datalist[position].fname
-        holder.itemView.findViewById<TextView>(R.id.lastname).text = datalist[position].lname
+        holder.id.text = datalist[position].id.toString()
+        holder.firstname.text = datalist[position].fname
+        holder.lastname.text = datalist[position].lname
     }
 
     override fun getItemCount(): Int {
