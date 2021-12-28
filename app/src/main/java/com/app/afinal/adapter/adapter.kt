@@ -8,9 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.app.afinal.R
 import com.app.afinal.database.database
+import com.app.afinal.databinding.RowLayoutBinding
 import com.app.afinal.model.model
 
 class adapter() : RecyclerView.Adapter<adapter.myviewholder>() {
+
+    lateinit var binding: RowLayoutBinding
 
     private var datalist = emptyList<model>()
 

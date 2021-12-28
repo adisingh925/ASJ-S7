@@ -21,6 +21,7 @@ abstract class database : RoomDatabase(){
         fun getDatabase(context: Context):database
         {
             val tempinstance = INSTANCE
+
             if(tempinstance!=null)
             {
                 return tempinstance
