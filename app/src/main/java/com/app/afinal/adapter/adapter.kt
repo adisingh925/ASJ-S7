@@ -1,13 +1,8 @@
 package com.app.afinal.adapter
 
-import android.text.Layout
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.app.afinal.R
-import com.app.afinal.database.database
 import com.app.afinal.databinding.RowLayoutBinding
 import com.app.afinal.model.model
 
